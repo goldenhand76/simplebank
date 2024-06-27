@@ -75,6 +75,7 @@ func (server *Server) listAccount(ctx *gin.Context) {
 		Limit:  int32(req.PageSize),
 		Offset: (int32(req.PageID) - 1) * int32(req.PageSize),
 	}
+
 	accounts, err := server.store.ListAccounts(ctx, arg)
 	if err != nil {
 		if err == sql.ErrNoRows {

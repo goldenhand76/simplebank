@@ -26,4 +26,7 @@ test :
 server :
 	go run main.go
 
+mock : 
+	mockgen -destination db/mock/store.go -package mockdb simplabank/db/sqlc Store	
+	
 .PHONY: postgres createdb dropdb
