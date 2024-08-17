@@ -26,6 +26,9 @@ sqlc:
 test :
 	go test -v -cover ./...
 	
+format:
+	go fmt ./...
+	
 server :
 	go run main.go
 
