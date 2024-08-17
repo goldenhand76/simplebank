@@ -4,8 +4,6 @@
 name: ci-test 
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
     
@@ -13,7 +11,7 @@ jobs:
 
   test:
     name: Test
-    environment: Development
+    environment: Production
     runs-on: ubuntu-latest
     
     services: 
