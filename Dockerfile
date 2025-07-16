@@ -15,6 +15,9 @@ COPY app.env .
 COPY start.sh .
 COPY db/migration ./migration
 
+RUN chmod +x /app/start.sh /app/main /app/migrate
+RUN sed -i 's/\r$//' /app/start.sh     # fix Windows line endings
+
 EXPOSE 8080
 ENTRYPOINT [ "/app/start.sh" ]
 CMD [ "/app/main" ]
