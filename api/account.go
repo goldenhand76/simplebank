@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"errors"
 	"net/http"
-	db "simplabank/db/sqlc"
-	"simplabank/token"
+	db "simplebank/db/sqlc"
+	"simplebank/token"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"

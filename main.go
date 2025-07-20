@@ -3,9 +3,9 @@ package main
 import (
 	"database/sql"
 	"log"
-	"simplabank/api"
-	db "simplabank/db/sqlc"
-	"simplabank/util"
+	"simplebank/api"
+	db "simplebank/db/sqlc"
+	"simplebank/util"
 
 	_ "github.com/lib/pq"
 )

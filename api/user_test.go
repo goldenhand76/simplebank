@@ -9,9 +9,9 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"reflect"
-	mockdb "simplabank/db/mock"
-	db "simplabank/db/sqlc"
-	"simplabank/util"
+	mockdb "simplebank/db/mock"
+	db "simplebank/db/sqlc"
+	"simplebank/util"
 	"testing"
 
 	"github.com/gin-gonic/gin"

@@ -18,6 +18,9 @@ run:
 	docker rm simplebank || true
 	docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" goldenhand/simplebank:latest
 	
+new_migration:
+	migrate create -ext sql -dir db/migration -seq $(name)
+
 migrateup:
 	migrate -path ./db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
@@ -39,5 +42,11 @@ server :
 mock : 
 	mockgen -destination db/mock/store.go -package mockdb simplabank/db/sqlc Store	
 
+proto :
+	rm -f pb/*.go
+	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
+    --go-grpc_out=pb --go-grpc_opt=paths=source_relative \
+    proto/*.proto
 
-.PHONY: postgres createdb dropdb
+
+.PHONY: postgres createdb dropdb proto 

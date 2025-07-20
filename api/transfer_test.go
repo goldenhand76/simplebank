@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	mockdb "simplabank/db/mock"
-	db "simplabank/db/sqlc"
+	mockdb "simplebank/db/mock"
+	db "simplebank/db/sqlc"
 
-	"simplabank/token"
-	"simplabank/util"
+	"simplebank/token"
+	"simplebank/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"

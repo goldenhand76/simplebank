@@ -2,8 +2,8 @@ package api
 
 import (
 	"os"
-	db "simplabank/db/sqlc"
-	"simplabank/util"
+	db "simplebank/db/sqlc"
+	"simplebank/util"
 	"testing"
 	"time"
 
